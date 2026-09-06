@@ -667,25 +667,26 @@ header h3 {
    ADICIONAIS
 ======================================== */
 
+/* ========================================
+   ADICIONAIS
+======================================== */
+
 .Adicionais {
-    width: min(95%, 1000px);
-    margin: 40px auto;
+    width: min(100%, 1000px);
+    margin: 50px auto;
+    padding: 0 20px;
+
+    text-align: center;
 }
 
 .lista {
-
-    width: min(450px, 92%);
-
-    margin: 20px auto;
-
+    width: min(450px, 100%);
+    margin: 25px auto;
     padding: 20px;
-
-    overflow: hidden;
 
     background-color: #fff;
 
     border: 2px solid #C5A24D;
-
     border-radius: 18px;
 
     box-shadow:
@@ -697,7 +698,6 @@ header h3 {
 }
 
 .lista:hover {
-
     transform: translateY(-5px);
 
     box-shadow:
@@ -705,35 +705,44 @@ header h3 {
 }
 
 .lista ul {
+    width: 100%;
 
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 .lista li {
+    list-style: none;
+
+    padding: 9px 5px;
 
     text-align: center;
 
-    list-style: none;
+    font-size: 16px;
 
-    padding: 8px;
+    line-height: 1.5;
 
     border-bottom:
         1px solid rgba(197, 162, 77, 0.35);
 }
 
+.lista li:last-child {
+    border-bottom: none;
+}
+/* ========================================
+   RODAPÉ
+======================================== */
 
 /* ========================================
    RODAPÉ
 ======================================== */
 
 .rodape {
-
     width: 100%;
 
-    margin-top: 80px;
+    margin-top: 70px;
 
-    padding: 45px 20px 20px;
+    padding: 40px 20px 20px;
 
     background-color: #DDC8BF;
 
@@ -743,43 +752,36 @@ header h3 {
 }
 
 .rodape-conteudo {
-
-    width: min(1100px, 95%);
+    width: min(1100px, 100%);
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 40px;
+    gap: 35px;
 
     text-align: center;
 }
 
 .rodape h2 {
-
     margin: 0 0 10px;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(22px, 4vw, 28px);
+    font-size: 26px;
 
-    color: #4E4C35;
+    line-height: 1.2;
 }
 
 .rodape h3 {
-
     margin: 0 0 12px;
 
     font-size: 18px;
-
-    color: #4E4C35;
 }
 
 .rodape p {
-
     margin: 6px 0;
 
     font-size: 15px;
@@ -788,11 +790,9 @@ header h3 {
 }
 
 .rodape a {
-
     display: block;
 
     width: fit-content;
-
     max-width: 100%;
 
     margin: 7px auto;
@@ -800,6 +800,8 @@ header h3 {
     color: #4E4C35;
 
     text-decoration: none;
+
+    overflow-wrap: break-word;
 
     transition: color 0.3s ease;
 }
@@ -809,8 +811,7 @@ header h3 {
 }
 
 .rodape-linha {
-
-    width: min(700px, 80%);
+    width: min(700px, 90%);
 
     height: 2px;
 
@@ -824,14 +825,12 @@ header h3 {
 }
 
 .rodape-final p {
-
     margin: 0;
 
     font-size: 13px;
 
-    opacity: 0.85;
+    line-height: 1.5;
 }
-
 
 /* ========================================
    TABLETS
@@ -1058,3 +1057,75 @@ header h3 {
     }
 }
 
+@media (max-width: 550px) {
+
+    /* ADICIONAIS */
+
+    .Adicionais {
+        width: 100%;
+        padding: 0 15px;
+        margin: 40px auto;
+    }
+
+    .lista {
+        width: 100%;
+        max-width: 450px;
+
+        padding: 18px 15px;
+
+        margin: 20px auto;
+
+        border-radius: 16px;
+    }
+
+    .lista li {
+        font-size: 15px;
+        padding: 8px 3px;
+    }
+
+
+    /* RODAPÉ */
+
+    .rodape {
+        margin-top: 50px;
+
+        padding: 35px 15px 20px;
+    }
+
+    .rodape-conteudo {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 30px;
+
+        text-align: center;
+    }
+
+    .rodape h2 {
+        font-size: 24px;
+    }
+
+    .rodape h3 {
+        font-size: 17px;
+    }
+
+    .rodape p {
+        font-size: 14px;
+    }
+
+    .rodape a {
+        font-size: 14px;
+    }
+
+    .rodape-linha {
+        width: 90%;
+        margin: 30px auto 18px;
+    }
+
+    .rodape-final p {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+}
