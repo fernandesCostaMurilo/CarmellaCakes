@@ -1129,3 +1129,180 @@ header h3 {
         padding: 0 10px;
     }
 }
+/* ========================================
+   CORREÇÃO MOBILE - ADICIONAIS E RODAPÉ
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* ====================================
+       ADICIONAIS
+    ==================================== */
+
+    .Adicionais {
+        width: 100%;
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 0 15px;
+
+        text-align: center;
+    }
+
+    .lista {
+        width: 100%;
+        max-width: 450px;
+
+        margin: 20px auto;
+        padding: 18px 15px;
+
+        overflow: hidden;
+
+        border-radius: 16px;
+    }
+
+    .lista ul {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .lista li {
+        width: 100%;
+
+        margin: 0;
+
+        padding: 9px 2px;
+
+        list-style: none;
+
+        text-align: center;
+
+        font-size: 15px;
+
+        line-height: 1.5;
+
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+
+    /* ====================================
+       RODAPÉ
+    ==================================== */
+
+    .rodape {
+        width: 100%;
+
+        margin-top: 50px;
+
+        padding: 35px 15px 20px;
+
+        overflow: hidden;
+    }
+
+    .rodape-conteudo {
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        text-align: center;
+    }
+
+    .rodape-conteudo > div {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .rodape h2 {
+        font-size: 24px;
+    }
+
+    .rodape h3 {
+        font-size: 18px;
+    }
+
+    .rodape p {
+        font-size: 14px;
+
+        overflow-wrap: anywhere;
+    }
+
+    .rodape a {
+        max-width: 100%;
+
+        font-size: 14px;
+
+        overflow-wrap: anywhere;
+    }
+
+    .rodape-linha {
+        width: 90%;
+
+        margin: 30px auto 20px;
+    }
+
+    .rodape-final {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .rodape-final p {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+}
+
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 400px) {
+
+    .Adicionais {
+        padding: 0 10px;
+    }
+
+    .lista {
+        width: 100%;
+
+        padding: 15px 10px;
+    }
+
+    .lista li {
+        font-size: 14px;
+    }
+
+    .rodape {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .rodape-conteudo {
+        gap: 25px;
+    }
+
+    .rodape h2 {
+        font-size: 22px;
+    }
+
+    .rodape h3 {
+        font-size: 16px;
+    }
+
+    .rodape p,
+    .rodape a {
+        font-size: 13px;
+    }
+}
