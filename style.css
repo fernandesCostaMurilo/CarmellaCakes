@@ -1,3 +1,4 @@
+
 /* ========================================
    CONFIGURAÇÕES GERAIS
 ======================================== */
@@ -14,15 +15,14 @@ body {
     margin: 0;
     padding: 0;
 
-    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    min-height: 100vh;
 
+    font-family: Arial, Helvetica, sans-serif;
     color: #4E4C35;
 
     background-color: #E7E7DE;
 
-    /*
-       Fundo suave com detalhes dourados
-    */
     background-image:
         radial-gradient(
             circle at 15% 20%,
@@ -38,12 +38,18 @@ body {
     background-attachment: fixed;
 
     line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
 
 /* ========================================
-   TEXTOS GERAIS
+   IMAGENS E ELEMENTOS GERAIS
 ======================================== */
+
+img {
+    max-width: 100%;
+}
 
 h1,
 h2,
@@ -54,10 +60,7 @@ p {
 
 h1,
 h2,
-h3 {
-    color: #4E4C35;
-}
-
+h3,
 p {
     color: #4E4C35;
 }
@@ -69,7 +72,6 @@ p {
 
 header {
     width: 100%;
-
     min-height: 16vh;
 
     padding: 20px 15px;
@@ -95,7 +97,7 @@ header h1 {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(30px, 5vw, 48px);
+    font-size: clamp(28px, 5vw, 48px);
 
     line-height: 1.1;
 
@@ -105,7 +107,7 @@ header h1 {
 header h2 {
     margin: 4px 0;
 
-    font-size: clamp(16px, 2.5vw, 20px);
+    font-size: clamp(15px, 2.5vw, 20px);
 
     font-weight: normal;
 
@@ -113,7 +115,7 @@ header h2 {
 }
 
 header h3 {
-    max-width: 700px;
+    width: min(700px, 100%);
 
     margin: 3px 0;
 
@@ -132,7 +134,9 @@ header h3 {
 .tbg,
 .timg,
 .BL,
-.BLt1 {
+.BLt1,
+.passo3,
+.Adicionais {
     text-align: center;
 }
 
@@ -141,7 +145,7 @@ header h3 {
 
     padding: 0 20px;
 
-    font-size: clamp(25px, 4vw, 36px);
+    font-size: clamp(24px, 4vw, 36px);
 }
 
 .BL {
@@ -151,17 +155,17 @@ header h3 {
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(36px, 7vw, 70px);
+    font-size: clamp(34px, 7vw, 70px);
 
     line-height: 1.1;
 }
 
 .BLt1 {
-    max-width: 800px;
+    width: min(800px, 92%);
 
     margin: 0 auto 30px;
 
-    padding: 0 20px;
+    padding: 0;
 
     font-size: clamp(16px, 2.5vw, 20px);
 
@@ -169,11 +173,11 @@ header h3 {
 }
 
 .passo1 p {
-    max-width: 800px;
+    width: min(800px, 92%);
 
     margin: 15px auto;
 
-    padding: 0 20px;
+    padding: 0;
 
     font-size: clamp(16px, 2.5vw, 20px);
 
@@ -251,7 +255,6 @@ header h3 {
 .Brigadeiros ul {
 
     padding: 0;
-
     margin: 20px 0;
 }
 
@@ -296,6 +299,8 @@ header h3 {
     width: clamp(60px, 15vw, 85px);
 
     height: clamp(60px, 15vw, 85px);
+
+    flex-shrink: 0;
 
     object-fit: cover;
 
@@ -441,7 +446,7 @@ header h3 {
 
 
 /* ========================================
-   SEÇÃO PASSO 2
+   PASSO 2
 ======================================== */
 
 .passo2 {
@@ -459,7 +464,7 @@ header h3 {
 
     margin-bottom: 30px;
 
-    font-size: clamp(23px, 4vw, 32px);
+    font-size: clamp(22px, 4vw, 32px);
 
     font-weight: bold;
 
@@ -659,76 +664,21 @@ header h3 {
 
 
 /* ========================================
-   TABLETS
+   ADICIONAIS
 ======================================== */
 
-@media (max-width: 768px) {
-
-    header {
-
-        min-height: auto;
-
-        padding: 25px 15px;
-    }
-
-
-    .BL {
-
-        margin-top: 45px;
-    }
-
-
-    .titulo-brigadeiros {
-
-        flex-direction: column;
-    }
-
-
-    .Brigadeiros {
-
-        min-height: auto;
-    }
-
-
-    .imagens {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 18px;
-    }
-
-
-    .cards {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 20px;
-    }
-
-
-    .bolosdecoração {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 20px;
-    }
+.Adicionais {
+    width: min(95%, 1000px);
+    margin: 40px auto;
 }
 
-.Adicionais{
-    text-align: center;
+.lista {
 
-}
-.lista li{
-    text-align: center;
-    list-style: none;
-}
+    width: min(450px, 92%);
 
-.lista{
+    margin: 20px auto;
 
-    width: 100%;
+    padding: 20px;
 
     overflow: hidden;
 
@@ -741,29 +691,36 @@ header h3 {
     box-shadow:
         0 8px 20px rgba(78, 76, 53, 0.14);
 
-    padding-bottom: 20px;
-
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-.lista {
+.lista:hover {
 
     transform: translateY(-5px);
 
     box-shadow:
         0 12px 28px rgba(78, 76, 53, 0.20);
-    
-    width: 450px;
-
-    margin: 20px auto;
-
-    padding: 10px;
-
 }
 
+.lista ul {
 
+    padding: 0;
+    margin: 0;
+}
+
+.lista li {
+
+    text-align: center;
+
+    list-style: none;
+
+    padding: 8px;
+
+    border-bottom:
+        1px solid rgba(197, 162, 77, 0.35);
+}
 
 
 /* ========================================
@@ -771,6 +728,7 @@ header h3 {
 ======================================== */
 
 .rodape {
+
     width: 100%;
 
     margin-top: 80px;
@@ -784,10 +742,8 @@ header h3 {
     color: #4E4C35;
 }
 
-
-/* Conteúdo principal */
-
 .rodape-conteudo {
+
     width: min(1100px, 95%);
 
     margin: 0 auto;
@@ -802,20 +758,19 @@ header h3 {
     text-align: center;
 }
 
-
-/* Títulos */
-
 .rodape h2 {
+
     margin: 0 0 10px;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 28px;
+    font-size: clamp(22px, 4vw, 28px);
 
     color: #4E4C35;
 }
 
 .rodape h3 {
+
     margin: 0 0 12px;
 
     font-size: 18px;
@@ -823,10 +778,8 @@ header h3 {
     color: #4E4C35;
 }
 
-
-/* Textos */
-
 .rodape p {
+
     margin: 6px 0;
 
     font-size: 15px;
@@ -834,13 +787,13 @@ header h3 {
     line-height: 1.6;
 }
 
-
-/* Links */
-
 .rodape a {
+
     display: block;
 
     width: fit-content;
+
+    max-width: 100%;
 
     margin: 7px auto;
 
@@ -855,10 +808,8 @@ header h3 {
     color: #C5A24D;
 }
 
-
-/* Linha dourada */
-
 .rodape-linha {
+
     width: min(700px, 80%);
 
     height: 2px;
@@ -868,20 +819,65 @@ header h3 {
     background-color: #C5A24D;
 }
 
-
-/* Copyright */
-
 .rodape-final {
     text-align: center;
 }
 
 .rodape-final p {
+
     margin: 0;
 
     font-size: 13px;
 
     opacity: 0.85;
 }
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: auto;
+        padding: 25px 15px;
+    }
+
+    .BL {
+        margin-top: 45px;
+    }
+
+    .titulo-brigadeiros {
+        flex-direction: column;
+    }
+
+    .Brigadeiros {
+        min-height: auto;
+    }
+
+    .imagens {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .bolosdecoração {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .rodape-conteudo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+
 /* ========================================
    CELULARES
 ======================================== */
@@ -889,124 +885,103 @@ header h3 {
 @media (max-width: 550px) {
 
     body {
-
         background-attachment: scroll;
     }
 
-
     header {
-
         padding: 25px 12px;
     }
 
-
     header h1 {
-
         font-size: 30px;
     }
 
-
     header h2 {
-
         font-size: 15px;
     }
 
-
     header h3 {
-
         font-size: 12px;
     }
 
-
     .tbg {
-
         margin-top: 35px;
     }
 
-
     .BL {
-
         margin-top: 40px;
     }
 
-
     .BLt1 {
-
+        width: 92%;
         font-size: 16px;
-
         line-height: 1.6;
     }
 
-
     .Brigadeiros {
-
         width: 92%;
-
         padding: 20px 15px;
-
         border-radius: 16px;
     }
 
-
     .titulo-brigadeiros {
-
         gap: 10px;
     }
 
-
     .titulo-brigadeiros h2 {
-
         font-size: 20px;
     }
 
-
     .imagens {
-
         width: 94%;
-
         padding: 5px;
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
-
     .cards {
-
         width: 92%;
-
         grid-template-columns: 1fr;
     }
-
 
     .bolosdecoração {
-
         width: 92%;
-
         grid-template-columns: 1fr;
     }
-
 
     .imgDoBolo1,
     .imgDoBolo2,
     .imgDoBolo3,
     .imgDoBolo4 {
-
         width: 100%;
     }
-
 
     .sabor p,
     .imgDoBolo1 p,
     .imgDoBolo2 p,
     .imgDoBolo3 p,
     .imgDoBolo4 p {
-
         font-size: 15px;
-
         line-height: 1.7;
+    }
+
+    .lista {
+        width: 92%;
+        padding: 15px;
+    }
+
+    .rodape {
+        padding: 35px 15px 20px;
+    }
+
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .rodape-linha {
+        width: 90%;
+        margin: 30px auto 20px;
     }
 }
 
@@ -1018,48 +993,49 @@ header h3 {
 @media (max-width: 380px) {
 
     header h1 {
-
         font-size: 27px;
     }
 
-
     header h2 {
-
         font-size: 14px;
     }
 
-
     header h3 {
-
         font-size: 11px;
     }
 
+    .tbg {
+        font-size: 23px;
+    }
+
+    .BL {
+        font-size: 34px;
+    }
 
     .imagens {
-
         grid-template-columns: 1fr;
     }
 
-
     .imagens img {
-
         width: min(100%, 280px);
-
         margin: auto;
     }
 
-
     .titulo-brigadeiros img {
-
         width: 65px;
-
         height: 65px;
     }
 
-
     .Brigadeiros li {
-
         font-size: 15px;
+    }
+
+    .lista {
+        width: 94%;
+    }
+
+    .lista li {
+        font-size: 14px;
     }
 }
 
@@ -1081,6 +1057,4 @@ header h3 {
         animation: none !important;
     }
 }
-.passo3{
-    text-align: center;
-}
+
